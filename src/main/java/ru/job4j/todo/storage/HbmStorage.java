@@ -5,12 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.query.Query;
 import ru.job4j.todo.model.Item;
 
-import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +22,17 @@ public class HbmStorage implements Store {
             .configure().build();
     private final SessionFactory sf = new MetadataSources(registry)
             .buildMetadata().buildSessionFactory();
+
+    private HbmStorage() {
+    }
+
+    private static final class Lazy {
+        private static final Store INST = new HbmStorage();
+    }
+
+    public static Store instOf() {
+        return Lazy.INST;
+    }
 
     @Override
     public Collection<Item> findAll() {

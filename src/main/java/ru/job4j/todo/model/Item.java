@@ -71,12 +71,12 @@ public class Item {
             return false;
         }
         Item item = (Item) o;
-        return id == item.id && Objects.equals(description, item.description);
+        return id == item.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description);
+        return Objects.hash(id);
     }
 
     @Override
