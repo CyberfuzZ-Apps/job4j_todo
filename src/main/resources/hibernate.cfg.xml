@@ -21,5 +21,8 @@
 
         <mapping class="ru.job4j.todo.model.Item" />
         <mapping class="ru.job4j.todo.model.User" />
+
+        <mapping class="ru.job4j.hibernate.onetomany.CarModel"/>
+        <mapping class="ru.job4j.hibernate.onetomany.CarBrand"/>
     </session-factory>
 </hibernate-configuration>
