@@ -6,7 +6,9 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 import ru.job4j.todo.model.Item;
+import ru.job4j.todo.model.User;
 
 import java.util.Collection;
 import java.util.List;
@@ -64,6 +66,11 @@ public class HbmStorage implements Store {
     }
 
     @Override
+    public void save(User user) {
+         transaction(session -> session.save(user));
+    }
+
+    @Override
     public void update(int id) {
         transaction(session -> {
             List items = session.createQuery(
@@ -72,6 +79,16 @@ public class HbmStorage implements Store {
             item.setDone(true);
             session.update(item);
             return item;
+        });
+    }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return transaction(session -> {
+            Query query = session.createQuery(
+                    "from ru.job4j.todo.model.User where email = :email")
+                    .setParameter("email", email);
+            return (User) query.uniqueResult();
         });
     }
 
