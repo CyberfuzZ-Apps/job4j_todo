@@ -29,5 +29,7 @@
         <mapping class="ru.job4j.hibernate.manytoone.JRole"/>
         <mapping class="ru.job4j.hibernate.manytomany.JBook"/>
         <mapping class="ru.job4j.hibernate.manytomany.JAuthor"/>
+        <mapping class="ru.job4j.hibernate.lazyinitializationexception.JCarBrand"/>
+        <mapping class="ru.job4j.hibernate.lazyinitializationexception.JCarModel"/>
     </session-factory>
 </hibernate-configuration>
