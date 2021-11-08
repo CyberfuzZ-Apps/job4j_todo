@@ -22,9 +22,12 @@
         <mapping class="ru.job4j.todo.model.Item" />
         <mapping class="ru.job4j.todo.model.User" />
 
+        <!-- for Hibernate relation examples -->
         <mapping class="ru.job4j.hibernate.onetomany.CarModel"/>
         <mapping class="ru.job4j.hibernate.onetomany.CarBrand"/>
         <mapping class="ru.job4j.hibernate.manytoone.JUser"/>
         <mapping class="ru.job4j.hibernate.manytoone.JRole"/>
+        <mapping class="ru.job4j.hibernate.manytomany.JBook"/>
+        <mapping class="ru.job4j.hibernate.manytomany.JAuthor"/>
     </session-factory>
 </hibernate-configuration>
