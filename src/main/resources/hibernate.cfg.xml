@@ -24,5 +24,7 @@
 
         <mapping class="ru.job4j.hibernate.onetomany.CarModel"/>
         <mapping class="ru.job4j.hibernate.onetomany.CarBrand"/>
+        <mapping class="ru.job4j.hibernate.manytoone.JUser"/>
+        <mapping class="ru.job4j.hibernate.manytoone.JRole"/>
     </session-factory>
 </hibernate-configuration>
