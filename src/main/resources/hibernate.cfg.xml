@@ -34,5 +34,8 @@
         <mapping class="ru.job4j.hibernate.manytomany.JAuthor"/>
         <mapping class="ru.job4j.hibernate.lazyinitializationexception.JCarBrand"/>
         <mapping class="ru.job4j.hibernate.lazyinitializationexception.JCarModel"/>
+        <mapping class="ru.job4j.hibernate.cars.Car"/>
+        <mapping class="ru.job4j.hibernate.cars.Driver"/>
+        <mapping class="ru.job4j.hibernate.cars.Engine"/>
     </session-factory>
 </hibernate-configuration>
