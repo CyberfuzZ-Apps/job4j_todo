@@ -7,6 +7,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
+import ru.job4j.todo.model.Category;
 import ru.job4j.todo.model.Item;
 import ru.job4j.todo.model.User;
 
@@ -56,13 +57,28 @@ public class HbmStorage implements Store {
     @Override
     public Collection<Item> findAll() {
         return transaction(
-                session -> session.createQuery("from ru.job4j.todo.model.Item").list()
+                session -> session.createQuery(
+                        "select distinct i from Item i join fetch i.categoryList").list()
         );
     }
 
     @Override
-    public void save(Item item) {
-        transaction(session -> session.save(item));
+    public Collection<Category> findAllCategories() {
+        return transaction(
+                session -> session.createQuery(
+                        "select c from Category c", Category.class).list()
+        );
+    }
+
+    @Override
+    public void save(Item item, String[] categories) {
+        transaction(session -> {
+            for (String cId : categories) {
+                Category category = session.find(Category.class, Integer.parseInt(cId));
+                item.addCategory(category);
+            }
+            return session.save(item);
+        });
     }
 
     @Override

@@ -54,6 +54,15 @@
                 <input type="text" class="form-control" name="new_item" id="new_item"
                        placeholder="Введите новое задание" required>
                 <br>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3" for="cIds" style="font-weight: 900">Категории</label>
+                    <div class="col-sm-5">
+                        <select class="form-control" name="cIds" id="cIds" size="4" multiple required>
+
+                        </select>
+                        <p><em>Нажмите CTRL + Click (COMMAND + Click) для выбора нескольких категорий сразу</em></p>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-success">Добавить</button>
             </form>
         </div>
@@ -70,9 +79,10 @@
                 <thead>
                 <tr>
                     <th scope="col" style="width: 10%">Выполнено</th>
-                    <th scope="col" style="width: 40%">Задание</th>
-                    <th scope="col" style="width: 30%">Дата создания</th>
+                    <th scope="col" style="width: 30%">Задание</th>
+                    <th scope="col" style="width: 20%">Дата создания</th>
                     <th scope="col" style="width: 20%">Автор</th>
+                    <th scope="col" style="width: 20%">Категории</th>
                 </tr>
                 </thead>
                 <tbody>

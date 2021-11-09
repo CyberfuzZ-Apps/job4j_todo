@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Класс UpdateItemServlet
+ * Класс UpdateItemServlet - сервлет отметки о выполнении задачи.
  *
  * @author Evgeniy Zaytsev
  * @version 1.0

@@ -2,7 +2,6 @@ package ru.job4j.todo.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import ru.job4j.todo.model.Item;
 import ru.job4j.todo.model.User;
 
 import javax.servlet.ServletException;

@@ -49,6 +49,8 @@ public class ItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String description = req.getParameter("description");
+        String categoriesStr = req.getParameter("categories");
+        String[] categories = categoriesStr.substring(0, categoriesStr.length() - 1).split(",");
         HttpSession sc = req.getSession();
         User user = (User) sc.getAttribute("user");
         Item item = new Item(
@@ -58,7 +60,7 @@ public class ItemServlet extends HttpServlet {
                 false,
                 user
         );
-        HbmStorage.instOf().save(item);
+        HbmStorage.instOf().save(item, categories);
     }
 
 }

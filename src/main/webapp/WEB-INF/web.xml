@@ -38,6 +38,10 @@
     <servlet-name>IndexServlet</servlet-name>
     <servlet-class>ru.job4j.todo.controller.IndexServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>ru.job4j.todo.controller.CategoryServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>ItemServlet</servlet-name>
@@ -62,6 +66,10 @@
   <servlet-mapping>
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/category.do</url-pattern>
   </servlet-mapping>
 
 </web-app>
