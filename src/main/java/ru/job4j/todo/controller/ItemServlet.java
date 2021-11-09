@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -56,7 +55,7 @@ public class ItemServlet extends HttpServlet {
         Item item = new Item(
                 0,
                 description,
-                new Timestamp(new Date().getTime()),
+                new Date(System.currentTimeMillis()),
                 false,
                 user
         );
