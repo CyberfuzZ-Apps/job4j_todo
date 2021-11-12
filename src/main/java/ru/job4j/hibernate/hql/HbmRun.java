@@ -7,6 +7,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Класс HbmRun
@@ -40,8 +41,8 @@ public class HbmRun {
                     .setParameter("cId", 1).uniqueResult();
             System.out.println(query1);
             /* Find by name */
-            Object query2 = session.createQuery("from Candidate c where c.name = :cName")
-                    .setParameter("cName", "Candidate3").uniqueResult();
+            List query2 = session.createQuery("from Candidate c where c.name = :cName")
+                    .setParameter("cName", "Candidate3").list();
             System.out.println(query2);
             /* Update */
             session.createQuery(
